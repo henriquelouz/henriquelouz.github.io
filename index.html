@@ -73,7 +73,7 @@
                 </div>
                 <div class="col-md-8">
                     <p>
-                        <span id="idade"></span> anos, natural de Belo Horizonte. Estudante de Sistemas de Informação pela PUC Minas de Contagem, atualmente no <span id="semestre"></span>º período.  Assim que me formei como técnico em informática pelo Colégio COTEMIG, ingressei em 2015 no mercado de trabalho atuando na área de desenvolvimento de sistemas. Dentre as principais habilidades que adquiri na minha trajetória, destaco o domínio do PHP e seus mais populares frameworks, do C# como minha principal linguagem para desktop e do Go, com a qual trabalho atualmente em uma das melhores empresas do ramo aqui de BH. 
+                        <span id="idade"></span> anos, natural de Belo Horizonte. Estudante de Sistemas de Informação pela PUC Minas de Contagem, atualmente no <span id="semestre"></span>º período.  Assim que me formei como técnico em informática pelo Colégio COTEMIG, ingressei em 2015 no mercado de trabalho atuando na área de desenvolvimento de sistemas. Dentre as principais habilidades que adquiri na minha trajetória, destaco o domínio do PHP e seus mais populares frameworks, do C# como minha principal linguagem para desktop e do Go, com a qual trabalho atualmente. 
                     </p>
                 </div>
             </div>
@@ -100,7 +100,7 @@
                 </h3>
                 <h4>Programador</h4>
                 <p>
-                    Desenvolvimento de ferramentas para backoffice de marketing multinível em PHP Zend. Aplicativos de saúde e bem-estar, migração de estrutura legado para api, emissão de relatórios a partir de banco de dados local MySQL e NoSQL DynamoDB (aws), estatísticas de faturamento, pagamento de bônus periódicos, manutenção de processos automatizados.
+                    Desenvolvimento de ferramentas para backoffice de marketing multinível em PHP Zend. Aplicativos de saúde e bem-estar, migração de estrutura legado para api, emissão de relatórios a partir de banco de dados MySQL e  DynamoDB, estatísticas de faturamento, pagamento de bônus periódicos, manutenção de processos automatizados.
                 </p>
             </div>
 
@@ -167,7 +167,7 @@
             </h3>
             <span class="education-date">01/2018 - 02/2021</span>
             <h4>Bacharelado em Sistemas de Informação</h4>
-            "O curso contempla conteúdos como programação de computadores, análise e projeto de sistemas, engenharia de software, sistemas de informação e aspectos organizacionais das empresas. Aborda as aplicações dos Sistemas de Informação como bancos de dados e recuperação de informação, gerência de projetos, segurança, avaliação e auditoria de sistemas, governança de tecnologia, abstração, representação e organização da informação. Na área de infraestrutura, sistemas operacionais, projeto e gerência de redes de computadores, comércio eletrônico e desenvolvimento distribuído e em nuvem. No campo gerencial, o papel de liderança da gerência da informação em organizações, a dinâmica do processo de administração e decisório, empreendedorismo e inovação."
+            "O curso contempla conteúdos como programação de computadores, análise e projeto de sistemas, engenharia de software, sistemas de informação e aspectos organizacionais das empresas. Aborda as aplicações dos Sistemas de Informação como bancos de dados e recuperação de informação, gerência de projetos, segurança, avaliação e auditoria de sistemas, governança de tecnologia, abstração, representação e organização da informação."
         </div>
         <!-- End .education-block -->
     </div>
@@ -235,6 +235,8 @@
             <li>MySQL</li>
             <li>MSSQL</li>
             <li>NoSQL</li>
+            <li>DynamoDB</li>
+            <li>MariaDB</li>
             <li>Agile</li>
         </ul>
     </div>
@@ -301,19 +303,30 @@
     <script src="js/scripts.min.js"></script>
 
     <script type="text/javascript">
-        $(function(){
-          var d = new Date();
-          var m = d.getMonth();
-          var y = d.getFullYear();
-          var semestre = y - 2017;
-  
-          if(m > 6){
-            semestre++;
-          }
-  
-          $("#idade").html(y - 1997);
-          $("#semestre").html(semestre);
-        });
+    $(function(){
+        var date = new Date();
+        var m = date.getMonth();
+        var y = date.getFullYear();
+
+        $("#idade").html(getIdade());
+        $("#semestre").html(getSemestreAtual());
+        
+        function getIdade(){
+            var idade = y - 1997;
+            if(m < 3){
+                idade--;
+            }
+            return idade;
+        }
+
+        function getSemestreAtual(){
+            var semestre = y - 2017;
+            if(m > 6){
+                semestre++;
+            }
+            return semestre;
+        }
+    });
     </script>
 </body>
 
