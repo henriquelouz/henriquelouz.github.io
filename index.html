@@ -320,7 +320,8 @@
         }
 
         function getSemestreAtual(){
-            var semestre = y - 2017;
+            var semestre = y - 2018;
+            semestre = (semestre * 2) + 1;
             if(m > 6){
                 semestre++;
             }
