@@ -64,7 +64,7 @@ header {
   animation-name: dropHeader;
   animation-iteration-count: 1;
   animation-timing-function: ease;
-  animation-duration: 0.75s;
+  animation-duration: 0.2s;
 }
 header ul {
   display: inline-block;
@@ -610,12 +610,6 @@ footer {
   #lead-content h2 {
     font-size: 1.75em;
   }
-  #about {
-    text-align: center;
-  }
-  #about p {
-    text-align: left;
-  }
 }
 @media only screen and (max-width: 768px) {
   header {
@@ -673,6 +667,10 @@ footer {
   .social {
     text-align: center;
   }
+  .language-options {
+    border-left: 0px !important;
+    padding-left: 0px !important;
+  }
 }
 @media only screen and (max-width: 480px) {
   #lead-content h1 {
@@ -689,6 +687,12 @@ footer {
 a {
   color: #db3434;
 }
+p {
+  text-align: justify;
+}
+#projects p {
+  text-align: center;
+}
 .profile {
   border-radius: 100%;
 }
@@ -699,11 +703,63 @@ a {
   display: flex;
   align-items: center;
 }
+.profile-picture {
+  margin-bottom: 30px;
+}
 .align-items-center {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .subtitle {
   display: block;
   font-size: 0.5em;
+}
+.github-color:hover,
+.github-color:active {
+  color: #000000 !important;
+}
+.linkedin-color:hover,
+.linkedin-color:active {
+  color: #0e76a8 !important;
+}
+.twitter-color:hover,
+.twitter-color:active {
+  color: #00acee !important;
+}
+.researchgate-color:hover,
+.researchgate-color:active {
+  color: #0cb !important;
+}
+.language-options {
+  border-left: 1px solid lightgray;
+  padding-left: 10px;
+}
+.language-options a {
+  display: inline;
+  padding: 5px 0px;
+}
+.flag-icon {
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  position: relative;
+  display: inline-block;
+  width: 1.33333333em;
+  line-height: 1em;
+}
+.flag-icon:before {
+  content: "\00a0";
+}
+.flag-icon {
+  width: 1em;
+}
+.flag-icon-br {
+  background-image: url(../images/flags/br.svg);
+}
+.flag-icon-gb {
+  background-image: url(../images/flags/gb.svg);
+}
+.flag-deactivated {
+  filter: grayscale(100%);
 }
