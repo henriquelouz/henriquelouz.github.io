@@ -727,9 +727,9 @@ p {
 .twitter-color:active {
   color: #00acee !important;
 }
-.researchgate-color:hover,
-.researchgate-color:active {
-  color: #0cb !important;
+.scholar-color:hover,
+.scholar-color:active {
+  color: rgb(79, 121, 237) !important;
 }
 .language-options {
   border-left: 1px solid lightgray;
